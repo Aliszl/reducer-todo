@@ -4,7 +4,7 @@ import "./Todo.css";
 const Todo = props => {
   return (
     <div className={props.todo.completed ? "completed" : "notCompleted"}>
-      <ul>{props.todo.task}</ul>
+      <ul>{props.todo.item}</ul>
     </div>
   );
 };

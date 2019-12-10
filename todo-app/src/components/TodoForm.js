@@ -12,10 +12,10 @@ const TodoForm = props => {
   const [state, dispatch] = useReducer(reducer, initialState);
 
   const onValueChange = e => {
-    const { item, value } = e.target;
+    const { name, value } = e.target;
     dispatch({
       type: INPUT_CHANGE,
-      payload: { item, value }
+      payload: { name, value }
     });
   };
   const onFormSubmit = event => {
@@ -23,12 +23,14 @@ const TodoForm = props => {
     dispatch({ type: SUBMIT_TODO });
   };
   //   , payload: { item:, completed:false, id: }
-  console.log(initialState);
+  console.log(state);
+
   return (
     <div>
       <div>
-        <form>
+        <form onSubmit={onFormSubmit}>
           <input
+            name="item"
             type="text"
             placeholder="Add todo"
             value={state.item}
