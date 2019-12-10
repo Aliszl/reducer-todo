@@ -22,7 +22,8 @@ const TodoForm = props => {
     event.preventDefault();
     dispatch({ type: SUBMIT_TODO });
   };
-  //   , payload: { item, completed, id }
+  //   , payload: { item:, completed:false, id: }
+  console.log(initialState);
   return (
     <div>
       <div>
